@@ -33,7 +33,12 @@ Student-Test-Score-Prediction/
 │   ├── train.csv
 │   ├── test.csv
 │   └── sample_submission.csv
-├── notebooks/             # Jupyter notebooks
+├── notebooks/
+│   ├── initial_linear_regression.ipynb  # Baseline linear regression + EDA
+│   ├── genetic_algorithm.ipynb          # GA feature selection on linear regression
+│   ├── random_forest.ipynb              # Random forest regressor
+│   └── neural_network.ipynb             # Neural network model
+├── submission/            # Generated submission CSVs (gitignored)
 ├── .env.example           # Template for API credentials
 ├── .gitignore
 ├── requirements.txt

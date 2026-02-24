@@ -122,6 +122,12 @@ kaggle competitions submissions -c playground-series-s6e1
 
 Or view them on the [competition leaderboard](https://www.kaggle.com/competitions/playground-series-s6e1/leaderboard).
 
+## Architecture
+
+### Neural Network
+
+![Neural Network Diagram](diagrams_png/nn_diagram_v3.png)
+
 ## Results
 
 ### Local Evaluation (Validation Set)

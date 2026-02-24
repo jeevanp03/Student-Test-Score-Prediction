@@ -37,7 +37,7 @@ Student-Test-Score-Prediction/
 │   ├── initial_linear_regression.ipynb  # Baseline linear regression + EDA
 │   ├── genetic_algorithm.ipynb          # GA feature selection on linear regression
 │   ├── random_forest.ipynb              # Random forest regressor
-│   └── neural_network.ipynb             # Neural network model
+│   └── neural_network_linear_embedded.ipynb  # Neural network linear embedded model
 ├── models/                # Saved model files (.pkl, gitignored)
 ├── metrics/               # Saved metrics CSVs (gitignored)
 ├── submission/            # Generated submission CSVs (gitignored)
@@ -108,7 +108,7 @@ Make sure your Kaggle API credentials are loaded, then submit:
 source .env
 kaggle competitions submit \
   -c playground-series-s6e1 \
-  -f "submission/neural_network_submission.csv" \
+  -f "submission/neural_network_linear_embedded_submission.csv" \
   -m "Message"
 ```
 
@@ -124,7 +124,7 @@ Or view them on the [competition leaderboard](https://www.kaggle.com/competition
 
 ## Architecture
 
-### Neural Network
+### Neural Network Linear Embedded
 
 ![Neural Network Diagram](diagrams_png/nn_diagram_v3.png)
 
@@ -134,7 +134,7 @@ Or view them on the [competition leaderboard](https://www.kaggle.com/competition
 
 | Model | MAE | RMSE | R² |
 |---|---|---|---|
-| Neural Network | 7.0508 | 8.8301 | 0.7818 |
+| Neural Network Linear Embedded | 7.0508 | 8.8301 | 0.7818 |
 | Linear Regression | 7.0933 | 8.8865 | 0.7780 |
 | Genetic Algorithm | 7.0933 | 8.8865 | 0.7780 |
 | Random Forest | 7.2497 | 9.1079 | 0.7668 |
@@ -143,9 +143,9 @@ Or view them on the [competition leaderboard](https://www.kaggle.com/competition
 
 | Model | Private Score | Public Score |
 |---|---|---|
-| Neural Network | 8.86259 | 8.83914 |
+| Neural Network Linear Embedded | 8.86259 | 8.83914 |
 | Linear Regression | 8.89132 | 8.87232 |
 | Genetic Algorithm | 8.89132 | 8.87232 |
 | Random Forest | 9.10425 | 9.07951 |
 
-Lower RMSE is better. The **Neural Network** achieved the best performance across all metrics.
+Lower RMSE is better. The **Neural Network Linear Embedded** achieved the best performance across all metrics.

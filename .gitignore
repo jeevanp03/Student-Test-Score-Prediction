@@ -18,6 +18,8 @@ build/
 # Data files (download from Kaggle)
 data/
 submission/
+models/
+metrics/
 
 # IDE
 .vscode/

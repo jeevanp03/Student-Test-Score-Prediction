@@ -38,6 +38,8 @@ Student-Test-Score-Prediction/
 │   ├── genetic_algorithm.ipynb          # GA feature selection on linear regression
 │   ├── random_forest.ipynb              # Random forest regressor
 │   └── neural_network.ipynb             # Neural network model
+├── models/                # Saved model files (.pkl, gitignored)
+├── metrics/               # Saved metrics CSVs (gitignored)
 ├── submission/            # Generated submission CSVs (gitignored)
 ├── .env.example           # Template for API credentials
 ├── .gitignore

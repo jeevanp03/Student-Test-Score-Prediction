@@ -100,9 +100,46 @@ After installing a new package, update `requirements.txt`:
 pip freeze > requirements.txt
 ```
 
-## Evaluation
+## Submission
 
-The primary evaluation metrics are:
+Make sure your Kaggle API credentials are loaded, then submit:
 
-- **RMSE** (Root Mean Squared Error) — lower is better
-- **R-Squared** — higher is better
+```bash
+source .env
+kaggle competitions submit \
+  -c playground-series-s6e1 \
+  -f "submission/neural_network_submission.csv" \
+  -m "Message"
+```
+
+Replace the file path with your submission file and `"Message"` with a description of your submission (e.g., model type, changes made).
+
+To check your submission results:
+
+```bash
+kaggle competitions submissions -c playground-series-s6e1
+```
+
+Or view them on the [competition leaderboard](https://www.kaggle.com/competitions/playground-series-s6e1/leaderboard).
+
+## Results
+
+### Local Evaluation (Validation Set)
+
+| Model | MAE | RMSE | R² |
+|---|---|---|---|
+| Neural Network | 7.0508 | 8.8301 | 0.7818 |
+| Linear Regression | 7.0933 | 8.8865 | 0.7780 |
+| Genetic Algorithm | 7.0933 | 8.8865 | 0.7780 |
+| Random Forest | 7.2497 | 9.1079 | 0.7668 |
+
+### Kaggle Leaderboard (RMSE)
+
+| Model | Private Score | Public Score |
+|---|---|---|
+| Neural Network | 8.86259 | 8.83914 |
+| Linear Regression | 8.89132 | 8.87232 |
+| Genetic Algorithm | 8.89132 | 8.87232 |
+| Random Forest | 9.10425 | 9.07951 |
+
+Lower RMSE is better. The **Neural Network** achieved the best performance across all metrics.

@@ -39,7 +39,8 @@ Student-Test-Score-Prediction/
 │   ├── random_forest.ipynb              # Random forest regressor
 │   ├── xgboost_baseline.ipynb           # XGBoost baseline model
 │   ├── xgboost_improved.ipynb           # XGBoost with tuned hyperparameters
-│   └── neural_network_linear_embedded.ipynb  # Neural network linear embedded model
+│   ├── neural_network_linear_embedded.ipynb  # Neural network linear embedded model
+│   └── ensemble.ipynb                        # Ensemble (XGBoost Improved + NN blend)
 ├── models/                # Saved model files (.pkl, gitignored)
 ├── metrics/               # Saved metrics CSVs (gitignored)
 ├── submission/            # Generated submission CSVs (gitignored)
@@ -136,6 +137,7 @@ Or view them on the [competition leaderboard](https://www.kaggle.com/competition
 
 | Model | MAE | RMSE | R² |
 |---|---|---|---|
+| Ensemble (XGBoost + NN) | 6.9681 | 8.7399 | 0.7852 |
 | XGBoost Improved | 6.9674 | 8.7423 | 0.7851 |
 | Neural Network Linear Embedded | 7.0562 | 8.8355 | 0.7815 |
 | Linear Regression | 7.0933 | 8.8865 | 0.7780 |
@@ -147,6 +149,7 @@ Or view them on the [competition leaderboard](https://www.kaggle.com/competition
 
 | Model | Private Score | Public Score |
 |---|---|---|
+| **Ensemble (XGBoost + NN)** | **8.75216** | **8.72378** |
 | XGBoost Improved | 8.75240 | 8.72307 |
 | Neural Network Linear Embedded | 8.86626 | 8.84533 |
 | Linear Regression | 8.89132 | 8.87232 |
@@ -154,4 +157,4 @@ Or view them on the [competition leaderboard](https://www.kaggle.com/competition
 | XGBoost Baseline | 8.90292 | 8.86689 |
 | Random Forest | 9.10425 | 9.07951 |
 
-Lower RMSE is better. The **XGBoost Improved** achieved the best performance across all metrics.
+Lower RMSE is better. The **Ensemble** achieved the best performance on both local validation and the Kaggle leaderboard.

@@ -140,7 +140,7 @@ Or view them on the [competition leaderboard](https://www.kaggle.com/competition
 | Ensemble (XGBoost + NN) | 6.9681 | 8.7399 | 0.7852 |
 | XGBoost Improved | 6.9674 | 8.7423 | 0.7851 |
 | Neural Network Linear Embedded | 7.0562 | 8.8355 | 0.7815 |
-| Linear Regression | 7.0933 | 8.8865 | 0.7780 |
+| Linear Regression | 7.1013| 8.8948 | 0.7789 |
 | Genetic Algorithm | 7.0933 | 8.8865 | 0.7780 |
 | XGBoost Baseline | 7.0829 | 8.9026 | 0.7771 |
 | Random Forest | 7.2497 | 9.1079 | 0.7668 |

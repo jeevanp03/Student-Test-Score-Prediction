@@ -129,7 +129,88 @@ Or view them on the [competition leaderboard](https://www.kaggle.com/competition
 
 ### Neural Network Linear Embedded
 
-![Neural Network Diagram](diagrams_png/nn_diagram_v3.png)
+```mermaid
+flowchart TD
+    subgraph EMB["Embeddings"]
+        E1["Cat₁<br/>Emb(3→4)"]
+        E2["Cat₂<br/>Emb(7→8)"]
+        E3["Cat₃<br/>Emb(2→3)"]
+        E4["Cat₄<br/>Emb(3→4)"]
+        E5["Cat₅<br/>Emb(5→6)"]
+        E6["Cat₆<br/>Emb(3→4)"]
+        E7["Cat₇<br/>Emb(3→3)"]
+        NUM["Numeric<br/>12 features"]
+    end
+
+    E1 & E2 & E3 & E4 & E5 & E6 & E7 & NUM --> CAT
+
+    CAT["⊕  Concatenate → 44d"]
+
+    CAT --> L1
+
+    subgraph B1["Dense Block 1"]
+        L1["Linear(44 → 256)"]
+        BN1["BatchNorm1d(256)"]
+        R1["LeakyReLU(α=0.01)"]
+        D1["Dropout(p=0.15)"]
+        L1 --> BN1 --> R1 --> D1
+    end
+
+    D1 --> L2
+
+    subgraph B2["Dense Block 2"]
+        L2["Linear(256 → 128)"]
+        BN2["BatchNorm1d(128)"]
+        R2["LeakyReLU(α=0.01)"]
+        D2["Dropout(p=0.15)"]
+        L2 --> BN2 --> R2 --> D2
+    end
+
+    D2 --> L3
+
+    subgraph B3["Dense Block 3"]
+        L3["Linear(128 → 64)"]
+        BN3["BatchNorm1d(64)"]
+        R3["LeakyReLU(α=0.01)"]
+        D3["Dropout(p=0.15)"]
+        L3 --> BN3 --> R3 --> D3
+    end
+
+    D3 --> OUT["Linear(64 → 1)<br/>Score Prediction"]
+
+    style EMB fill:#0c1a2e,stroke:#0ea5e9,color:#7dd3fc
+    style B1  fill:#0c1a2e,stroke:#3b82f6,color:#93c5fd
+    style B2  fill:#0c1a2e,stroke:#3b82f6,color:#93c5fd
+    style B3  fill:#0c1a2e,stroke:#3b82f6,color:#93c5fd
+
+    style E1  fill:#082030,stroke:#0ea5e9,color:#7dd3fc
+    style E2  fill:#082030,stroke:#0ea5e9,color:#7dd3fc
+    style E3  fill:#082030,stroke:#0ea5e9,color:#7dd3fc
+    style E4  fill:#082030,stroke:#0ea5e9,color:#7dd3fc
+    style E5  fill:#082030,stroke:#0ea5e9,color:#7dd3fc
+    style E6  fill:#082030,stroke:#0ea5e9,color:#7dd3fc
+    style E7  fill:#082030,stroke:#0ea5e9,color:#7dd3fc
+    style NUM fill:#0f1f0f,stroke:#4ade80,color:#86efac
+
+    style CAT fill:#1e1030,stroke:#8b5cf6,color:#c4b5fd
+
+    style L1  fill:#0f1a30,stroke:#3b82f6,color:#93c5fd
+    style BN1 fill:#1a1200,stroke:#f59e0b,color:#fcd34d
+    style R1  fill:#001a10,stroke:#10b981,color:#6ee7b7
+    style D1  fill:#1a0a0a,stroke:#ef4444,color:#fca5a5
+
+    style L2  fill:#0f1a30,stroke:#3b82f6,color:#93c5fd
+    style BN2 fill:#1a1200,stroke:#f59e0b,color:#fcd34d
+    style R2  fill:#001a10,stroke:#10b981,color:#6ee7b7
+    style D2  fill:#1a0a0a,stroke:#ef4444,color:#fca5a5
+
+    style L3  fill:#0f1a30,stroke:#3b82f6,color:#93c5fd
+    style BN3 fill:#1a1200,stroke:#f59e0b,color:#fcd34d
+    style R3  fill:#001a10,stroke:#10b981,color:#6ee7b7
+    style D3  fill:#1a0a0a,stroke:#ef4444,color:#fca5a5
+
+    style OUT fill:#1a0c00,stroke:#f97316,color:#fdba74
+```
 
 ## Results
 
@@ -151,10 +232,10 @@ Or view them on the [competition leaderboard](https://www.kaggle.com/competition
 |---|---|---|
 | **Ensemble (XGBoost + NN)** | **8.75216** | **8.72378** |
 | XGBoost Improved | 8.75240 | 8.72307 |
-| Neural Network Linear Embedded | 8.86626 | 8.84533 |
+| Neural Network Linear Embedded | 8.85988 | 8.84211 |
 | Linear Regression | 8.89132 | 8.87232 |
 | Genetic Algorithm | 8.89132 | 8.87232 |
 | XGBoost Baseline | 8.90292 | 8.86689 |
 | Random Forest | 9.10425 | 9.07951 |
 
-Lower RMSE is better. The **Ensemble** achieved the best performance on both local validation and the Kaggle leaderboard.
+Lower RMSE is better. Public Score is used for competition ranking. The **Ensemble** achieved the best performance on both local validation and the Kaggle leaderboard.

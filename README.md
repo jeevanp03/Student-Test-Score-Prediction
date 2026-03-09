@@ -225,6 +225,7 @@ flowchart TD
 | Genetic Algorithm | 7.0933 | 8.8865 | 0.7780 |
 | XGBoost Baseline | 7.0829 | 8.9026 | 0.7771 |
 | Random Forest | 7.2497 | 9.1079 | 0.7668 |
+| Nearest Neighbour | 7.5878 | 9.4681 | 0.7479 |
 
 ### Kaggle Leaderboard (RMSE)
 
@@ -237,5 +238,6 @@ flowchart TD
 | Genetic Algorithm | 8.89132 | 8.87232 |
 | XGBoost Baseline | 8.90292 | 8.86689 |
 | Random Forest | 9.10425 | 9.07951 |
+| Nearest Neighbour | 9.46447 | 9.42413 |
 
 Lower RMSE is better. Public Score is used for competition ranking. The **Ensemble** achieved the best performance on both local validation and the Kaggle leaderboard.

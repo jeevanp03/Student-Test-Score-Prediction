@@ -222,7 +222,7 @@ flowchart TD
 | XGBoost Improved | 6.9674 | 8.7423 | 0.7851 |
 | Neural Network Linear Embedded | 7.0562 | 8.8355 | 0.7815 |
 | Linear Regression | 7.1013| 8.8948 | 0.7789 |
-| Genetic Algorithm | 7.0933 | 8.8865 | 0.7780 |
+| Genetic Algorithm | 7.0934 | 8.8865 | 0.7780 |
 | XGBoost Baseline | 7.0829 | 8.9026 | 0.7771 |
 | Random Forest | 7.2497 | 9.1079 | 0.7668 |
 | Nearest Neighbour | 7.5878 | 9.4681 | 0.7479 |
@@ -235,7 +235,7 @@ flowchart TD
 | XGBoost Improved | 8.75240 | 8.72307 |
 | Neural Network Linear Embedded | 8.85988 | 8.84211 |
 | Linear Regression | 8.89132 | 8.87232 |
-| Genetic Algorithm | 8.89132 | 8.87232 |
+| Genetic Algorithm | 8.89189 | 8.87294 |
 | XGBoost Baseline | 8.90292 | 8.86689 |
 | Random Forest | 9.10425 | 9.07951 |
 | Nearest Neighbour | 9.46447 | 9.42413 |
